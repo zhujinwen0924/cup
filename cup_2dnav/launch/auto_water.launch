@@ -1,0 +1,4 @@
+<launch>
+    <node name="GPIO_Control" pkg="cup_2dnav" type="GPIO_Control.py"  output="screen"/>
+
+</launch>

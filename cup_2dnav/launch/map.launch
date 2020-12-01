@@ -1,0 +1,12 @@
+<launch>
+    <arg name="map_name" default="map"/>
+    <param name="cup_move_map_name" value="$(find cup_2dnav)/maps/$(arg map_name)"/>
+<!--  ****** Maps *****  -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find cup_2dnav)/maps/$(arg map_name).yaml"
+          output="screen">
+        <param name="frame_id" value="map"/>
+    </node>
+
+
+
+</launch>

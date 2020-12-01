@@ -1,0 +1,20 @@
+# planner
+base_global_planner: global_planner/GlobalPlanner
+base_local_planner: teb_local_planner/TebLocalPlannerROS
+
+# cleaning patience
+planner_patience: 20.0
+controller_patience: 300.0
+
+# plan and control frequency
+planner_frequency: 1.0
+controller_frequency: 7.0
+
+#recovery_behavior_enabled: true
+#recovery_behaviors:
+#  - name: 'aggressive_reset'
+#    type: 'clear_costmap_recovery/ClearCostmapRecovery'
+#
+#aggressive_reset:
+#  reset_distance: 0.0
+#  layer_names: ["obstacle_3d_layer"]

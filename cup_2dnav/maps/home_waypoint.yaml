@@ -1,0 +1,52 @@
+task:
+- { id: 0, time: 16.0, name: area_name }
+- { id: 1, time: 25.0, name: area_name }
+- { id: 2, time: 20.0, name: area_name }
+- { id: 3, time: 10.0, name: area_name }
+header: 
+  seq: 0
+  stamp: 
+    secs: 0
+    nsecs:         0
+  frame_id: "map"
+poses: 
+  - 
+    position: 
+      x: 0.676159024239
+      y: 2.22474265099
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: -0.434600794422
+      w: 0.900623200616
+  - 
+    position: 
+      x: 1.61887478828
+      y: 3.03181600571
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: -0.419245410731
+      w: 0.907872945726
+  - 
+    position: 
+      x: 2.89391517639
+      y: 1.47870862484
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.912240046392
+      w: 0.409656072528
+  - 
+    position: 
+      x: 1.90372443199
+      y: 0.78693151474
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: 0.90194501107
+      w: 0.43185089673

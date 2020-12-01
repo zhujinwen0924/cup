@@ -1,0 +1,16 @@
+<launch>
+    <arg name="way_points_name" default="waypoint"/>
+    <param name="way_points_name" value="$(find cup_2dnav)/maps/$(arg way_points_name)"/>
+    <!--  ************** Global Parameters ***************  -->
+    <param name="/use_sim_time" value="false"/>
+
+    <!--  ****** Waypoint Recorder *****  -->
+    <node name="waypoint_tool" pkg="cup_2dnav" type="waypoint_editor.py"
+          args="$(find cup_2dnav)/maps/$(arg way_points_name).yaml" output="screen">
+        <!--        <param name="frame_id" value="map"/>-->
+    </node>
+
+    <!--  **************** Visualisation ****************  -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find cup_2dnav)/config/waypoint_editor.rviz"/>
+
+</launch>

@@ -1,0 +1,30 @@
+<launch>
+    <!-- GPIO ros driver -->
+    <!-- <node name="TX2_GPIO" pkg="cup_2dnav" type="TX2_gpio.py"  output="screen"/> -->
+
+    <!--************** Range Sensor ***************-->
+    <!-- hokoyo laser -->
+    <node pkg="urg_node" type="urg_node" name="urg_node"
+          args="_ip_address:=192.168.0.10 /scan:=/hokoyo"/>
+
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+        <remap from="scan" to="hokoyo"/>
+        <remap from="scan_filtered" to="hokoyo_filtered"/>
+        <rosparam command="load" file="$(find cup_2dnav)/config/sensor/laser_angle_filter.yaml"/>
+    </node>
+
+
+    <!--************** Odom ***************-->
+    <!-- lego loam(visual odom) -->
+    <!--    <include file="$(find lego_loam)/launch/run.launch"/>-->
+    <!--    odom from base-->
+    <node pkg="bottle_son_odometry" type="bottle_son_odometry" name="bottle_son_odometry"/>
+
+    <!--  ************** TF ***************  -->
+    <node pkg="tf" type="static_transform_publisher" name="velodyne_to_base_link"
+          args="0.1 0.1 0.0 -0.05 0 0 /base_link /velodyne 40"/>
+    <node pkg="tf" type="static_transform_publisher" name="hokoyo_to_base_link"
+          args="0.25 -0.04 0 -0.05 0 0 /base_link /laser 40"/>
+
+
+</launch>

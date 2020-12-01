@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<library path="lib/libglobal_planner_lib">
+    <class name="global_planner/RoadPointGlobalPlanner" type="global_planner::RoadPointGlobalPlanner"
+           base_class_type="nav_core::BaseGlobalPlanner">
+        <description>Road point following global planner</description>
+    </class>
+</library>
